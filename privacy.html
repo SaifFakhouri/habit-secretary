@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Habit Secretary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --surface: #171717;
+      --border: #2a2a2a;
+      --accent: #c8f55a;
+      --text: #e8e8e0;
+      --muted: #888880;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+      position: sticky;
+      top: 0;
+      background: rgba(15,15,15,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-left: 6px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+    .doc-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-meta {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .hero-meta-item .label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hero-meta-item .value {
+      font-size: 0.875rem;
+      color: var(--text);
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin: 1.75rem 0 0.6rem;
+    }
+    p {
+      font-size: 0.9375rem;
+      color: #ccc8c0;
+      margin-bottom: 1rem;
+    }
+    ul, ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      font-size: 0.9375rem;
+      color: #ccc8c0;
+      margin-bottom: 0.4rem;
+    }
+    strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200, 245, 90, 0.3);
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--accent); }
+
+    /* ── Callout box ── */
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1.5rem 0;
+    }
+    .callout p { margin: 0; font-size: 0.875rem; }
+
+    /* ── Table of contents ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .toc-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .toc ol {
+      padding-left: 1.25rem;
+      margin: 0;
+      counter-reset: toc;
+    }
+    .toc li {
+      margin-bottom: 0.3rem;
+      font-size: 0.875rem;
+    }
+    .toc a {
+      color: var(--muted);
+      border-bottom: none;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="brand">Habit Secretary<span></span></a>
+    <span class="doc-label">Privacy Policy</span>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <p class="hero-eyebrow">Legal Document</p>
+    <h1>Your data.<br><em>Clearly explained.</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="label">Effective Date</span>
+        <span class="value">January 1, 2025</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Last Updated</span>
+        <span class="value">January 1, 2025</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Applies To</span>
+        <span class="value">iOS &amp; Android App</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toc">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Information We Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Information</a></li>
+      <li><a href="#third-parties">Third-Party Services</a></li>
+      <li><a href="#data-retention">Data Retention</a></li>
+      <li><a href="#your-rights">Your Rights &amp; Controls</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <section id="overview">
+    <h2>1. Overview</h2>
+    <p>Habit Secretary ("we," "us," or "our") is a personal accountability and habit tracking application. This Privacy Policy explains what information we collect, why we collect it, and how you can control it.</p>
+    <p>By using Habit Secretary, you agree to the practices described in this policy. If you do not agree, please do not use the app.</p>
+    <div class="callout">
+      <p><strong>Short version:</strong> We collect only what's necessary to run the app and provide AI coaching. We do not sell your personal data to anyone, ever.</p>
+    </div>
+  </section>
+
+  <section id="data-collected">
+    <h2>2. Information We Collect</h2>
+
+    <h3>Account Information</h3>
+    <p>When you create an account, we collect:</p>
+    <ul>
+      <li>Email address</li>
+      <li>User ID (system-generated)</li>
+      <li>Authentication method (password or magic link)</li>
+    </ul>
+
+    <h3>Profile &amp; Onboarding Data</h3>
+    <p>During onboarding and through app usage, we collect:</p>
+    <ul>
+      <li>Your name or display name</li>
+      <li>Personal goals and goal descriptions</li>
+      <li>"Perfect day" template content you define</li>
+      <li>Preferred morning briefing time</li>
+      <li>Quiet hours preferences</li>
+      <li>Timezone and locale information</li>
+    </ul>
+
+    <h3>Habit &amp; Activity Data</h3>
+    <ul>
+      <li>Habit definitions and categories you create</li>
+      <li>Habit completion logs and timestamps</li>
+      <li>Weekly review data and insights</li>
+      <li>Streaks and progress records</li>
+    </ul>
+
+    <h3>AI Conversation Data</h3>
+    <p>The AI secretary feature involves:</p>
+    <ul>
+      <li>Messages you send to the AI secretary</li>
+      <li>AI-generated responses</li>
+      <li>Memory context summaries generated from your conversation history</li>
+      <li>Morning briefing content</li>
+    </ul>
+    <p>This content is used to provide continuity and personalization in your AI coaching experience.</p>
+
+    <h3>Notification Preferences</h3>
+    <ul>
+      <li>Whether you have granted notification permissions</li>
+      <li>Your configured reminder schedules</li>
+      <li>Notification delivery and interaction records</li>
+    </ul>
+
+    <h3>Device &amp; Technical Data</h3>
+    <ul>
+      <li>Device type and operating system version</li>
+      <li>App version</li>
+      <li>Crash reports and diagnostic data (for stability purposes)</li>
+      <li>Session tokens stored locally on your device</li>
+    </ul>
+
+    <h3>What We Do Not Collect</h3>
+    <ul>
+      <li>We do not collect your precise location</li>
+      <li>We do not access your contacts, camera, or microphone</li>
+      <li>We do not collect payment information directly (handled by Apple/Google)</li>
+      <li>We do not build advertising profiles</li>
+    </ul>
+  </section>
+
+  <section id="how-we-use">
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the data we collect to:</p>
+    <ul>
+      <li><strong>Provide the app:</strong> authenticate your account, store your habits, and deliver AI coaching responses</li>
+      <li><strong>Personalize AI responses:</strong> conversation history and memory context are used to make the AI secretary relevant and contextual to your goals</li>
+      <li><strong>Send notifications:</strong> morning briefings, habit reminders, and check-ins based on your configured schedule and quiet hours</li>
+      <li><strong>Generate insights:</strong> weekly review summaries and progress analysis</li>
+      <li><strong>Improve reliability:</strong> crash monitoring and diagnostic data help us fix bugs and maintain stability</li>
+      <li><strong>Communicate with you:</strong> transactional emails (account verification, password reset) — no marketing emails without your explicit opt-in</li>
+    </ul>
+    <p>We do not use your data for behavioral advertising, data brokering, or any purpose beyond operating and improving Habit Secretary.</p>
+  </section>
+
+  <section id="third-parties">
+    <h2>4. Third-Party Services</h2>
+    <p>Habit Secretary relies on the following third-party services to function:</p>
+
+    <h3>Supabase</h3>
+    <p>Our backend infrastructure. Supabase stores your account data, habit logs, messages, and app state. Supabase is SOC 2 compliant. See their <a href="https://supabase.com/privacy" target="_blank">Privacy Policy</a>.</p>
+
+    <h3>Google Gemini</h3>
+    <p>Powers the AI secretary functionality. Your messages and relevant context are sent to Google's Gemini API to generate responses. Google's use of this data is governed by their <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and applicable API terms. We do not permit Google to use your data to train their models under our API agreement.</p>
+
+    <h3>Expo / React Native</h3>
+    <p>The app is built with Expo. Expo may collect limited technical data for push notification delivery. See <a href="https://expo.dev/privacy" target="_blank">Expo's Privacy Policy</a>.</p>
+
+    <h3>Apple / Google</h3>
+    <p>App distribution, in-app purchases (if applicable), and push notification infrastructure are handled by Apple (iOS) and Google (Android), subject to their respective privacy policies.</p>
+
+    <h3>Crash Monitoring</h3>
+    <p>We use a crash monitoring service to receive diagnostic reports when the app crashes. These reports contain device metadata and stack traces — not personal content from your habits or conversations.</p>
+
+    <div class="callout">
+      <p>We do not sell, rent, or share your personal data with advertisers or data brokers.</p>
+    </div>
+  </section>
+
+  <section id="data-retention">
+    <h2>5. Data Retention</h2>
+    <p>We retain your data for as long as your account is active. Specifically:</p>
+    <ul>
+      <li><strong>Account data:</strong> retained until you delete your account</li>
+      <li><strong>Habit logs and messages:</strong> retained while your account exists; you can clear AI memory at any time from within the app</li>
+      <li><strong>Crash/diagnostic data:</strong> typically retained for 90 days</li>
+      <li><strong>After account deletion:</strong> we delete your personal data within 30 days of account deletion, except where retention is required by law</li>
+    </ul>
+  </section>
+
+  <section id="your-rights">
+    <h2>6. Your Rights &amp; Controls</h2>
+    <p>You have meaningful control over your data inside the app:</p>
+
+    <h3>Account Deletion</h3>
+    <p>You can permanently delete your account and all associated data directly from within the app (Settings → Account → Delete Account). This removes your profile, habits, messages, and all stored data.</p>
+
+    <h3>AI Memory Clear</h3>
+    <p>You can clear the AI secretary's memory context at any time from the app settings. This resets the contextual memory used to personalize responses without deleting your account.</p>
+
+    <h3>Notification Control</h3>
+    <p>You can modify or disable notifications at any time within the app or through your device's system settings.</p>
+
+    <h3>Data Access &amp; Portability</h3>
+    <p>You may request a copy of the personal data we hold about you by contacting us at the address below.</p>
+
+    <h3>Residents of Specific Regions</h3>
+    <p>If you are located in the European Economic Area, United Kingdom, California, or another jurisdiction with specific privacy rights, you may have additional rights including the right to access, rectify, or restrict processing of your data. Contact us to exercise these rights.</p>
+  </section>
+
+  <section id="security">
+    <h2>7. Security</h2>
+    <p>We take reasonable technical and organizational measures to protect your data, including:</p>
+    <ul>
+      <li>Encrypted data transmission (HTTPS/TLS)</li>
+      <li>Supabase row-level security for database access control</li>
+      <li>Secure local storage for session tokens on-device</li>
+      <li>Regular dependency updates and security monitoring</li>
+    </ul>
+    <p>No system is completely secure. If you believe your account has been compromised, contact us immediately.</p>
+  </section>
+
+  <section id="children">
+    <h2>8. Children's Privacy</h2>
+    <p>Habit Secretary is not directed at children under 13 years of age (or under 16 in certain jurisdictions). We do not knowingly collect personal information from children. If we become aware that we have collected data from a child without parental consent, we will delete it promptly.</p>
+  </section>
+
+  <section id="changes">
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. For material changes, we will notify you within the app. Continued use of Habit Secretary after changes are posted constitutes acceptance of the updated policy.</p>
+  </section>
+
+  <section id="contact">
+    <h2>10. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or want to exercise your data rights, contact us at:</p>
+    <p><strong>Habit Secretary</strong><br />
+    Email: <a href="mailto:privacy@habitsecretary.app">privacy@habitsecretary.app</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Habit Secretary. All rights reserved. &nbsp;·&nbsp; <a href="/terms">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>
